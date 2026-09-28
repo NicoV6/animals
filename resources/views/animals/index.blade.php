@@ -34,11 +34,11 @@
                 <p class="text-slate-400 mt-2">{{ $animal['species'] }} - {{ $animal['age'] }} años</p>
 
                 <div class="flex gap-3 mt-3">
-                    <a href="{{ route('animals.edit', $id) }}" class="text-blue-400 hover:underline">
+                    <a href="{{ route('animals.edit', $animal['id']) }}" class="text-blue-400 hover:underline">
                         Editar
                     </a>
 
-                    <form action="{{ route('animals.destroy', $id) }}" method="POST" class="inline">
+                    <form action="{{ route('animals.destroy', $animal['id']) }}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-400 hover:underline" onclick="return confirm('¿Seguro que querés eliminar este animal?')">
